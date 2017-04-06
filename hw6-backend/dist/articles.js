@@ -14,8 +14,6 @@ var getUniqueCommentId = function getUniqueCommentId() {
 };
 var getArticles = function getArticles(req, res) {
 	var query = req.params.id;
-	console.log('query ' + query);
-	console.log(articles);
 	if (query) {
 		var byAuthor = articles.filter(function (a) {
 			return a.author == query;
@@ -27,7 +25,6 @@ var getArticles = function getArticles(req, res) {
 		var byId = articles.filter(function (a) {
 			return a._id == query;
 		});
-		console.log(byId);
 		if (byId.length) {
 			res.send({ articles: byId });
 			return;

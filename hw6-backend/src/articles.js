@@ -8,8 +8,6 @@ const getUniqueCommentId = () => {
 }
 const getArticles = (req, res) => {
 	const query = req.params.id
-	console.log(`query ${query}`)
-	console.log(articles)
 	if (query) {
 		const byAuthor = articles.filter(a => a.author == query)
 		if (byAuthor.length) {
@@ -17,7 +15,6 @@ const getArticles = (req, res) => {
 			return
 		} 
 		const byId = articles.filter(a => a._id == query)
-		console.log(byId)
 		if (byId.length) {
 			res.send({articles: byId})
 			return

@@ -6,7 +6,6 @@ const logger = require('morgan')
 const allowedOrigin = 'http://localhost:8080'
 
 const cors = (req, res, next) => {
-	console.log('entered cors')
 	res.header('Access-Control-Allow-Origin', allowedOrigin)
 	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With,\
 									 Content-Type, Accept')
